@@ -3,7 +3,7 @@ import cx_Oracle as cx
 
 def main():
 	tablenames = ['Crime', 'Population', 'Police', 'Literacy', 'Mishap', 'Group']
-	string = 'system/breakwindows@XE'
+	string = raw_input('user_id/password@XE')
 
 	conn = cx.connect(string)
 	c = conn.cursor()

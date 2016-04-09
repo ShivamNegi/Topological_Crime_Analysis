@@ -1,7 +1,7 @@
 import cx_Oracle as cx
 
 def main():
-	string = 'system/breakwindows@XE'
+	string = raw_input('user_id/password@XE')	
 	conn = cx.connect(string)
 	c = conn.cursor()
 	c.execute('select * from names')
