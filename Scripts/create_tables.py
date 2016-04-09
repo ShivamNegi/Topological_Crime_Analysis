@@ -8,13 +8,13 @@ def main():
 	createliteracy(c)
 	conn.commit()
 
+	createpopulation(c)
+	conn.commit()
+
 	createpolice(c)
 	conn.commit()
 
 	createcrime(c)
-	conn.commit()
-
-	createpopulation(c)
 	conn.commit()
 
 	createmishap(c)
@@ -29,15 +29,17 @@ def createcrime(c):
 			create table crime(
 			c_id varchar2(20) primary key,
 			p_id varchar2(20),
+			pol_id varchar2(20),
 			state varchar2(20),
 			type varchar2(200),
 			year number(4),
 			count number(10),
-			foreign key (p_id) references population
+			foreign key (p_id) references population,
+			foreign key (pol_id) references police
 			)
-			'''
-	print 'Crime table created.'
+			'''	
 	c.execute(query)
+	print 'Crime table created.'
 
 
 def createpopulation(c):
@@ -49,26 +51,27 @@ def createpopulation(c):
 			sex_ratio_m_f numeric(6, 2) default 1000,
 			count_million numeric(5, 2),
 			change_factor numeric(3, 1),
-			foreign key(state, year) references literacy,
-			foreign key(state, year) references police
+			foreign key(state, year) references literacy
 			)			
 			'''
-	print 'Population table created.'
 	c.execute(query)
+	print 'Population table created.'
 
 
 def createpolice(c):
 	query = '''
 			create table police(
+			pol_id varchar2(20) primary key,
+			p_id varchar2(20),
 			state varchar2(20),
 			year number(4),
-			per_100_km number(4),
-			count_thousand numeric(5, 2),
-			primary key(state, year)
+			per_100sq_km number(4),
+			count_thousand numeric(6, 2),
+			foreign key (p_id) references population
 			)
 			'''
-	print 'Police table created.'
 	c.execute(query)
+	print 'Police table created.'
 
 
 def createliteracy(c):
@@ -76,12 +79,12 @@ def createliteracy(c):
 			create table literacy(
 			state varchar2(20) ,
 			year number(4) ,
-			percent numeric(4, 2),
+			percent numeric(5, 2),
 			primary key(state, year)
 			)
 			'''
-	print 'literacy table created.'
 	c.execute(query)
+	print 'literacy table created.'
 
 
 def createmishap(c):
@@ -91,29 +94,32 @@ def createmishap(c):
 			year number(4) not null,
 			description varchar(50))
 			'''
-	print 'Mishap table created.'
 	c.execute(query)
+	print 'Mishap table created.'
 
 
 def creategrouping(c):
 	query = '''
 			create table grouping(
 			gp_name varchar(20) primary key,
+			pol_id varchar2(20),
 			p_id varchar2(20),
 			c_id varchar2(20),
 			id_e varchar2(10),
 			state varchar2(20) not null,
 			year number(4) not null,
-			type varchar2(20) not null,
 			foreign key (id_e) references mishap,	
 			foreign key(p_id) references population,
 			foreign key(state, year) references literacy,
-			foreign key(state, year) references police,
+			foreign key(pol_id) references police,
 			foreign key(c_id) references crime)
 			'''
-	print 'Grouping table created.'
 	c.execute(query)	
+	print 'Grouping table created.'
 	
 
 if __name__ == '__main__':
 	main()
+	print '-' * 60
+	print '\t\tALL TABLES CREATED.'
+	print '-' * 60

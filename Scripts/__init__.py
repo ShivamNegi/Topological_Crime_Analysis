@@ -12,6 +12,7 @@ def main():
 	droptables(c, tablenames)
 	conn.commit()
 
+
 def droptables(c, tablenames):
 	for name in tablenames:
 		try:
@@ -22,3 +23,6 @@ def droptables(c, tablenames):
 
 if __name__ == '__main__':
 	main()
+	print '-' * 60
+	print '\t\tALL TABLES DROPPED.'
+	print '-' * 60
