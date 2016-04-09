@@ -30,7 +30,7 @@ def createcrime(c):
 			c_id varchar2(20) primary key,
 			p_id varchar2(20),
 			pol_id varchar2(20),
-			state varchar2(20),
+			state varchar2(30),
 			type varchar2(200),
 			year number(4),
 			count number(10),
@@ -46,7 +46,7 @@ def createpopulation(c):
 	query = '''
 			create table population(
 			p_id varchar2(20) primary key,
-			state varchar2(20) not null,
+			state varchar2(30) not null,
 			year number(4) not null,
 			sex_ratio_m_f numeric(6, 2) default 1000,
 			count_million numeric(5, 2),
@@ -63,7 +63,7 @@ def createpolice(c):
 			create table police(
 			pol_id varchar2(20) primary key,
 			p_id varchar2(20),
-			state varchar2(20),
+			state varchar2(30),
 			year number(4),
 			per_100sq_km number(4),
 			count_thousand numeric(6, 2),
@@ -77,7 +77,7 @@ def createpolice(c):
 def createliteracy(c):
 	query = '''
 			create table literacy(
-			state varchar2(20) ,
+			state varchar2(30) ,
 			year number(4) ,
 			percent numeric(5, 2),
 			primary key(state, year)
@@ -106,7 +106,7 @@ def creategrouping(c):
 			p_id varchar2(20),
 			c_id varchar2(20),
 			id_e varchar2(10),
-			state varchar2(20) not null,
+			state varchar2(30) not null,
 			year number(4) not null,
 			foreign key (id_e) references mishap,	
 			foreign key(p_id) references population,
