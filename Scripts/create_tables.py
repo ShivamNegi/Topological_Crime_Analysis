@@ -37,7 +37,7 @@ def createcrime(c):
 			foreign key (p_id) references population,
 			foreign key (pol_id) references police
 			)
-			'''	
+			'''
 	c.execute(query)
 	print 'Crime table created.'
 
