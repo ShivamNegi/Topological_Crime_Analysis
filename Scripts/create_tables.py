@@ -69,8 +69,8 @@ def createpolice(c):
 			p_id varchar2(20),
 			state varchar2(30),
 			year number(4),
-			per_100sq_km number(4),
-			count_thousand numeric(6, 2),
+			per_100sq_km number(6, 2),
+			strength numeric(6),
 			foreign key (p_id) references population
 			)
 			'''

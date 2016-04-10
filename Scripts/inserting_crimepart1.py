@@ -12,11 +12,14 @@ def main():
 	conn.commit()
 
 def fetchingdata(path, c):
-	filename = 'crime_count_women_2013.xls'
+	filename = 'crimes_count_women_01n11_part1.xls'
 	ra = ex.get_data(path + '/' + filename)
 	flag = False # leaving the headers
-	c_id = 1
+
 	no = 0
+	c_id = 353
+	g_id01 = 1
+	g_id11 = 37
 
 	for row in ra:
 		if flag == False:
@@ -24,14 +27,20 @@ def fetchingdata(path, c):
 		else:
 			state = row[0].encode('utf-8')
 			type_crime = row[1].encode('utf-8')
-			count = row[2]
-			year = 2013
-			if(state == 'Total (All-India)'):
-				continue
-			query = 'INSERT INTO CRIME VALUES(\'' + str(c_id) + '\',\'' + state + '\',\'' + type_crime + '\',' + `year` + ',' + `count` + ')'
+
+			query = 'INSERT INTO CRIME VALUES(\'' + str(c_id) + '\',\'' + str(g_id01) + '\',\'' + str(g_id01) + '\',\'' + state + '\',\'' + type_crime + '\',' + `2001` + ',' + `row[2]` + ')'
 			c.execute(query)
-			no += 1
 			c_id += 1
+
+			query = 'INSERT INTO CRIME VALUES(\'' + str(c_id) + '\',\'' + str(g_id11) + '\',\'' + str(g_id11) + '\',\'' + state + '\',\'' + type_crime + '\',' + `2001` + ',' + `row[3]` + ')'
+			c.execute(query)
+			c_id += 1
+
+			if g_id01 == 36:
+				g_id01 = 1
+				g_id11 = 37
+
+			no += 2
 
 	print no , "Rows inserted."
 
