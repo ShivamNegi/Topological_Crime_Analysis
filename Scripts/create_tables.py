@@ -23,6 +23,10 @@ def main():
 	creategrouping(c)
 	conn.commit()
 
+	print '-' * 60
+	print '\t\tALL TABLES CREATED.'
+	print '-' * 60
+
 
 def createcrime(c):
 	query = '''
@@ -48,9 +52,9 @@ def createpopulation(c):
 			p_id varchar2(20) primary key,
 			state varchar2(30) not null,
 			year number(4) not null,
-			sex_ratio_m_f numeric(6, 2) default 1000,
-			count_million numeric(5, 2),
-			change_factor numeric(3, 1),
+			sex_ratio_m_f numeric(4) default 1000,
+			count numeric(10),
+			change_factor numeric(4, 2),
 			foreign key(state, year) references literacy
 			)			
 			'''
@@ -120,6 +124,3 @@ def creategrouping(c):
 
 if __name__ == '__main__':
 	main()
-	print '-' * 60
-	print '\t\tALL TABLES CREATED.'
-	print '-' * 60

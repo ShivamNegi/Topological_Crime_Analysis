@@ -8,14 +8,17 @@ def main():
 	conn = cx.connect(string)
 	c = conn.cursor()
 	
-	ra = fetchingdata(path, c)
+	fetchingdata(path, c)
 	conn.commit()
+	print '-' * 60
+	print '\t\tPOPULATION TABLE INSERTED.'
+	print '-' * 60
 
 def fetchingdata(path, c):
 	filename = 'population_census2011.xls'
 	ra = ex.get_data(path + '/' + filename)
 	flag = False # leaving the headers
-	c_id = 1
+	p_id = 36
 	no = 0
 
 	for row in ra:
@@ -23,16 +26,17 @@ def fetchingdata(path, c):
 			flag = True
 		else:
 			state = row[0].encode('utf-8')
-			type_crime = row[1].encode('utf-8')
-			count = row[2]
-			year = 2013
-			if(state == 'Total (All-India)'):
-				continue
-			query = 'INSERT INTO CRIME VALUES(\'' + str(c_id) + '\',\'' + state + '\',\'' + type_crime + '\',' + `year` + ',' + `count` + ')'
-			c.execute(query)
+			population = int(row[1])
+			change_factor = float(row[2])
+			sex_ratio = int(row[3])
+			year = 2011
+			try:
+				query = 'INSERT INTO POPULATION VALUES(\'' + str(p_id) + '\',\'' + state + '\',' + `year` + ',' + `sex_ratio` + ',' + `population` + ',' + `change_factor` + ')'
+				c.execute(query)
+			except:
+				print state, p_id
 			no += 1
-			c_id += 1
-
+			p_id += 1
 	print no , "Rows inserted."
 
 if __name__ == '__main__':

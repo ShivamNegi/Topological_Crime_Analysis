@@ -43,5 +43,4 @@ for line in f.readlines():
 f.close()
 
 data.update({"Sheet 1": k})
-data.update({"Sheet 2": [["row 1", "row 2", "row 3","row 4"]]})
 save_data("population_census2011.xls", data)

@@ -10,6 +10,9 @@ def main():
 	
 	ra = fetchingdata(path, c)
 	conn.commit()
+	print '-' * 60
+	print '\t\tLITERACY TABLE INSERTED.'
+	print '-' * 60
 
 def fetchingdata(path, c):
 	filename = '1951-2011_literacy_rates.xls'
