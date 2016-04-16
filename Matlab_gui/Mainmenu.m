@@ -22,7 +22,7 @@ function varargout = Mainmenu(varargin)
 
 % Edit the above text to modify the response to help Mainmenu
 
-% Last Modified by GUIDE v2.5 16-Apr-2016 16:12:22
+% Last Modified by GUIDE v2.5 16-Apr-2016 16:51:05
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -106,5 +106,43 @@ function figure1_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to figure1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
-I = imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/Royal_.jpg');
-imshow(I, 'fit');
+
+
+% --- Executes during object creation, after setting all properties.
+function axes2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to axes2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
+
+hi = imagesc(I)
+
+
+
+
+% Hint: place code in OpeningFcn to populate axes2
+
+
+% --- Executes during object creation, after setting all properties.
+function axes1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to axes1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+x = 1:0.1:2*pi;
+plot(x, tan(x));
+hold on;
+plot(x, cot(x));
+plot(x, cos(x));
+grid on;
+
+% Hint: place code in OpeningFcn to populate axes1
+
+
+% --- Executes when figure1 is resized.
+function figure1_SizeChangedFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
