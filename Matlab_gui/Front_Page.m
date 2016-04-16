@@ -22,7 +22,7 @@ function varargout = Front_Page(varargin)
 
 % Edit the above text to modify the response to help Front_Page
 
-% Last Modified by GUIDE v2.5 13-Apr-2016 09:53:29
+% Last Modified by GUIDE v2.5 13-Apr-2016 18:14:09
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -99,3 +99,72 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on mouse press over figure background, over a disabled or
+% --- inactive control, or over an axes background.
+function figure1_WindowButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on mouse press over axes background.
+function axes1_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to axes1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function figure1_CreateFcn(hObject, eventdata, handles)
+
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes during object creation, after setting all properties.
+function axes2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to axes2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes2
+
+
+% --- Executes during object creation, after setting all properties.
+function axes5_CreateFcn(hObject, eventdata, handles)
+
+% hObject    handle to axes5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes5
+
+
+% --- Executes during object creation, after setting all properties.
+function axes8_CreateFcn(hObject, eventdata, handles)
+I = imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/Royal_.jpg');
+imshow(I);
+% hObject    handle to axes8 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes8
+
+
+% --- Executes on button press in pushbutton6.
+function pushbutton6_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton6 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes during object creation, after setting all properties.
+function uipanel7_CreateFcn(hObject, eventdata, handles)
+I = imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/Royal_.jpg');
+imshow(I);
+% hObject    handle to uipanel7 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
