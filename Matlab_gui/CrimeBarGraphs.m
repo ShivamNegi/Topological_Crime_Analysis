@@ -22,7 +22,7 @@ function varargout = CrimeBarGraphs(varargin)
 
 % Edit the above text to modify the response to help CrimeBarGraphs
 
-% Last Modified by GUIDE v2.5 19-Apr-2016 10:10:30
+% Last Modified by GUIDE v2.5 19-Apr-2016 21:38:28
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -91,9 +91,9 @@ function popupmenu1_CreateFcn(hObject, eventdata, handles)
 
 % Hint: popupmenu controls usually have a white background on Windows.
 %       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+     ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
-end
+
 
 
 % --- Executes on button press in pushbutton1.
@@ -130,12 +130,20 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on button press in pushbutton2.
+function pushbutton2_Callback(hObject, eventdata, handles)
+clf('reset');
+close;
+openfig('Mainmenu.fig');
+% hObject    handle to pushbutton2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
 % --- Executes during object creation, after setting all properties.
-function axes2_CreateFcn(hObject, eventdata, handles)
-I = imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
-imshow(I);
-% hObject    handle to axes2 (see GCBO)
+function axes5_CreateFcn(hObject, eventdata, handles)
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
+hi = imagesc(I)
+% hObject    handle to axes5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
-
-% Hint: place code in OpeningFcn to populate axes2

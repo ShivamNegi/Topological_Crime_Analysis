@@ -1,3 +1,5 @@
+clear all;
+clc;
 year = (2001:2012);
 data = xlsread('/home/negi/Documents/Matlab-Crime-Analysis/crimes_count_women_01_122.xls');
 states = {'Andhra Pradesh','Arunachal Pradesh',...
@@ -34,13 +36,12 @@ states = {'Andhra Pradesh','Arunachal Pradesh',...
     'Delhi UT',...
     'Lakshadweep',...
     'Puducherry'};
-%figure ('name', '3D Plot of Crime');
-hFig = figure('name', '3D Plot of Crime');
-%axes(handles.axes1);
-set(hFig, 'position', [300, 100, 1000, 1000]);
+
+hFig = figure('name', '3D Plot of Crime', 'NumberTitle', 'off');
+set(hFig, 'position', [700, 100, 1000, 1000]);
 bar3(data,1);
-xlabel('State');
+xlabel('Years');
+ylabel('States');
+zlabel('Number of Cases');
 set(gca, 'YTick', 1:35, 'YTickLabel', states, 'YTickLabelRotation', 30);
-set(gca, 'position', [0.13,0.11,0.9,0.9]);
-
-
+set(gca, 'position', [0.10 0.12 , 0.9, 0.9]);

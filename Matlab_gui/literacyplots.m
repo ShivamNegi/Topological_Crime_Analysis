@@ -1,10 +1,10 @@
-function[] = plots(state, type)
+function[] = literacyplots(state)
 
     %state is an integer value to denote the state
     %type is an integer value to denote the type of crime
     
-    years = {'2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013'}; 
-    data = xlsread('/home/negi/Documents/Matlab-Crime-Analysis/crimes_count_women_01_12.xls');
+    years = {'2001','2011'}; 
+    data = xlsread('/home/negi/Documents/Topological_Crime_Analysis/Literacy/testing.xls');
     
     states = {' Andhra Pradesh',' Arunachal Pradesh',...
     ' Assam',...
@@ -39,22 +39,19 @@ function[] = plots(state, type)
     ' Daman and Diu',...
     ' Delhi',...
     ' Lakshadweep',...
-    ' Puducherry',...
-    ' Total'};
-    
-    types = {'Rapes','Kidnappings & Abductions', 'Dowry Deaths', 'Assaults','Insult to Modesty',...
-    'Cruelty by Husband/Relatives',  'Immoral Traffic', 'Indescent Representation'};
+    ' Puducherry'};
+    states = sort(states);
 
-    crime = data(36*(type-1)+state, 1:13);
+    crime = data(state, 8:9);
     
     %figure ('name', 'Bar Graph')
     hFig = figure('name', 'Bar Graph', 'NumberTitle', 'off');   
-    set(hFig, 'Position', [620 420 800 600])
+    set(hFig)
     bar(crime);
     xlabel('\bf Year','FontSize', 15);
-    ylabel('\bf No. of Cases', 'FontSize', 15);
-    title(strcat(types(type),' in',states(state)), 'FontSize', 18);
-    set(gca, 'XTick', 1:13, 'XTickLabel', years, 'XTickLabelRotation', 45);
+    ylabel('\bf Percentage', 'FontSize', 15);
+    title(strcat('Literacy in',states(state)), 'FontSize', 18);
+    set(gca, 'XTick',1:11 , 'XTickLabel', years, 'XTickLabelRotation', 45);
+    ylim([0 100]);
     grid on
-                
-end
+          

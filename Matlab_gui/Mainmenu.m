@@ -22,7 +22,7 @@ function varargout = Mainmenu(varargin)
 
 % Edit the above text to modify the response to help Mainmenu
 
-% Last Modified by GUIDE v2.5 19-Apr-2016 18:38:03
+% Last Modified by GUIDE v2.5 19-Apr-2016 21:48:16
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -81,6 +81,9 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
+clf('reset');
+close;
+openfig('Table3dBarGraphs.fig');
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -112,13 +115,8 @@ function axes2_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to axes2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
-
-
 I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
-
 hi = imagesc(I)
-
-
 
 
 % Hint: place code in OpeningFcn to populate axes2
@@ -148,22 +146,12 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
 
 % --- Executes on button press in pushbutton5.
 function pushbutton5_Callback(hObject, eventdata, handles)
+clf('reset');
+close;
+openfig('TableMaps.fig');
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
-% --- Executes during object creation, after setting all properties.
-function axes6_CreateFcn(hObject, eventdata, handles)
-I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
-
-hi = imagesc(I)
-% hObject    handle to axes6 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: place code in OpeningFcn to populate axes6
-
 
 % --- Executes on button press in pushbutton6.
 function pushbutton6_Callback(hObject, eventdata, handles)
@@ -173,3 +161,14 @@ openfig('TableBarGraphs.fig');
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes during object creation, after setting all properties.
+function axes7_CreateFcn(hObject, eventdata, handles)
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
+hi = imagesc(I)
+% hObject    handle to axes7 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes7
