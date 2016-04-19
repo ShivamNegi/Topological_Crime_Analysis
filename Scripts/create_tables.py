@@ -17,10 +17,10 @@ def main():
 	createcrime(c)
 	conn.commit()
 
-	createmishap(c)
+	creategrouping(c)
 	conn.commit()
 
-	creategrouping(c)
+	createtotalcrime(c)
 	conn.commit()
 
 	print '-' * 60
@@ -91,17 +91,6 @@ def createliteracy(c):
 	print 'literacy table created.'
 
 
-def createmishap(c):
-	query = '''
-			create table mishap(
-			id_e varchar2(10) primary key,
-			year number(4) not null,
-			description varchar(50))
-			'''
-	c.execute(query)
-	print 'Mishap table created.'
-
-
 def creategrouping(c):
 	query = '''
 			create table grouping(
@@ -109,10 +98,8 @@ def creategrouping(c):
 			pol_id varchar2(20),
 			p_id varchar2(20),
 			c_id varchar2(20),
-			id_e varchar2(10),
 			state varchar2(30) not null,
 			year number(4) not null,
-			foreign key (id_e) references mishap,	
 			foreign key(p_id) references population,
 			foreign key(state, year) references literacy,
 			foreign key(pol_id) references police,
@@ -121,6 +108,17 @@ def creategrouping(c):
 	c.execute(query)	
 	print 'Grouping table created.'
 	
+def createtotalcrime(c):	
+	query = '''
+			create table totalcrime(
+			state varchar2(30),
+			type varchar2(200),
+			year number(4),
+			count number(10)			
+			)
+			'''
+	c.execute(query)
+
 
 if __name__ == '__main__':
 	main()

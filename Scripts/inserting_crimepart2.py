@@ -35,7 +35,7 @@ def fetchingdata(path, c):
 			c.execute(query)
 			c_id += 1
 
-			query = 'INSERT INTO CRIME VALUES(\'' + str(c_id) + '\',\'' + str(g_id11) + '\',\'' + str(g_id11) + '\',\'' + state + '\',\'' + type_crime + '\',' + `2001` + ',' + `row[3]` + ')'
+			query = 'INSERT INTO CRIME VALUES(\'' + str(c_id) + '\',\'' + str(g_id11) + '\',\'' + str(g_id11) + '\',\'' + state + '\',\'' + type_crime + '\',' + `2011` + ',' + `row[3]` + ')'
 			c.execute(query)
 			c_id += 1
 
