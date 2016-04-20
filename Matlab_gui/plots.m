@@ -4,7 +4,7 @@ function[] = plots(state, type)
     %type is an integer value to denote the type of crime
     
     years = {'2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013'}; 
-    data = xlsread('/home/negi/Documents/Matlab-Crime-Analysis/crimes_count_women_01_12.xls');
+    data = xlsread('~/Documents/Matlab-Crime-Analysis/crimes_count_women_01_12.xls');
     
     states = {' Andhra Pradesh',' Arunachal Pradesh',...
     ' Assam',...
