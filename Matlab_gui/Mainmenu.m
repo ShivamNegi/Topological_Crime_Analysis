@@ -22,7 +22,7 @@ function varargout = Mainmenu(varargin)
 
 % Edit the above text to modify the response to help Mainmenu
 
-% Last Modified by GUIDE v2.5 19-Apr-2016 21:48:16
+% Last Modified by GUIDE v2.5 20-Apr-2016 10:25:57
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -164,11 +164,11 @@ openfig('TableBarGraphs.fig');
 
 
 % --- Executes during object creation, after setting all properties.
-function axes7_CreateFcn(hObject, eventdata, handles)
+function axes8_CreateFcn(hObject, eventdata, handles)
 I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
 hi = imagesc(I)
-% hObject    handle to axes7 (see GCBO)
+% hObject    handle to axes8 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: place code in OpeningFcn to populate axes7
+% Hint: place code in OpeningFcn to populate axes8

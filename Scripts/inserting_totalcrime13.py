@@ -10,6 +10,9 @@ def main():
 	
 	ra = fetchingdata(path, c)
 	conn.commit()
+	print '-' * 60
+	print '\t\tTOTALCRIME TABLE INSERTED.'
+	print '-' * 60
 
 def fetchingdata(path, c):
 	filename = 'crimes_count_women_01_12.xls'

@@ -28,6 +28,7 @@ def fetchingdata(path, c):
 
 		for i in range(2, 14):
 			query = 'INSERT INTO TOTALCRIME VALUES(\'' + state + '\',\'' + type_crime + '\',' + `year_arr[counter]` + ',' + `row[i]` + ')'
+			counter = counter + 1
 			c.execute(query)
 			
 		no += 12

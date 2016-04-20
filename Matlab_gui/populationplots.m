@@ -1,11 +1,10 @@
-function[] = literacyplots(state)
+function[] = populationplots(state)
 
     %state is an integer value to denote the state
     %type is an integer value to denote the type of crime
     
     years = {'2001','2011'}; 
-    data = xlsread('/home/negi/Documents/Topological_Crime_Analysis/Literacy/testing.xls');
-    disp(data);
+    data = xlsread('/home/negi/Documents/Topological_Crime_Analysis/Population/testing.xls');
     
     states = {' Andhra Pradesh',' Arunachal Pradesh',...
     ' Assam',...
@@ -43,16 +42,15 @@ function[] = literacyplots(state)
     ' Puducherry'};
     states = sort(states);
 
-    crime = data(state, 8:9);
+    crime = data(state, 1:2);
     
     %figure ('name', 'Bar Graph')
     hFig = figure('name', 'Bar Graph', 'NumberTitle', 'off');   
     set(hFig)
     bar(crime);
     xlabel('\bf Year','FontSize', 15);
-    ylabel('\bf Percentage', 'FontSize', 15);
-    title(strcat('Literacy in',states(state)), 'FontSize', 18);
+    ylabel('\bf Population', 'FontSize', 15);
+    title(strcat('Population in',states(state)), 'FontSize', 18);
     set(gca, 'XTick',1:11 , 'XTickLabel', years, 'XTickLabelRotation', 45);
-    ylim([0 100]);
     grid on
           

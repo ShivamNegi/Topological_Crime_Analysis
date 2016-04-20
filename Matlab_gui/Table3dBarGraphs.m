@@ -22,7 +22,7 @@ function varargout = Table3dBarGraphs(varargin)
 
 % Edit the above text to modify the response to help Table3dBarGraphs
 
-% Last Modified by GUIDE v2.5 19-Apr-2016 23:41:10
+% Last Modified by GUIDE v2.5 20-Apr-2016 10:31:11
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -98,5 +98,15 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton5.
+function pushbutton5_Callback(hObject, eventdata, handles)
+clf('reset');
+close;
+openfig('Mainmenu.fig');
+% hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
