@@ -1,10 +1,10 @@
 function[d] = policedata(year)
+d =  xlsread('~/Documents/Topological_Crime_Analysis/Police/testing.xls');
 if year == 2011
-    d =  xlsread('police_strength_state_2011.xls');
+    d = d(1:end,1);
 else
     if year == 2001
-        d = xlsread('police_2001_strength.xls');
+        d = d(1:end,2);
     end
 end
-d = d(1:end,1);
 end
