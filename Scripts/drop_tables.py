@@ -2,7 +2,7 @@ import cx_Oracle as cx
 
 
 def main():
-	tablenames = ['Crime', 'Population', 'Police', 'Literacy', 'Mishap', 'Grouping', 'usertable', 'totalcrime']
+	tablenames = ['Crime', 'Population', 'Police', 'Literacy', 'Grouping', 'usertable', 'totalcrime']
 	# string = raw_input('user_id/password@XE: ')
 	string = 'system/breakwindows@XE'
 

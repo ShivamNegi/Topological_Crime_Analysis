@@ -22,7 +22,7 @@ function varargout = PopulationBarGraphs(varargin)
 
 % Edit the above text to modify the response to help PopulationBarGraphs
 
-% Last Modified by GUIDE v2.5 21-Apr-2016 18:10:08
+% Last Modified by GUIDE v2.5 21-Apr-2016 22:59:57
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -136,3 +136,14 @@ function listbox2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes during object creation, after setting all properties.
+function axes1_CreateFcn(hObject, eventdata, handles)
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
+hi = imagesc(I);
+% hObject    handle to axes1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes1

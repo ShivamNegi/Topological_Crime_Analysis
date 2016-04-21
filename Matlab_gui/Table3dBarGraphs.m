@@ -22,7 +22,7 @@ function varargout = Table3dBarGraphs(varargin)
 
 % Edit the above text to modify the response to help Table3dBarGraphs
 
-% Last Modified by GUIDE v2.5 20-Apr-2016 10:31:11
+% Last Modified by GUIDE v2.5 21-Apr-2016 23:01:05
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -110,3 +110,14 @@ openfig('Mainmenu.fig');
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes during object creation, after setting all properties.
+function axes1_CreateFcn(hObject, eventdata, handles)
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
+hi = imagesc(I);
+% hObject    handle to axes1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes1
