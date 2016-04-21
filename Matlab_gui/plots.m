@@ -45,7 +45,7 @@ function[] = plots(state, type)
     types = {'Rapes','Kidnappings & Abductions', 'Dowry Deaths', 'Assaults','Insult to Modesty',...
     'Cruelty by Husband/Relatives',  'Immoral Traffic', 'Indescent Representation'};
 
-    crime = data(36*(type-1)+state, 1:13);
+    crime = data(36*(type-1)+state, 3:15);
     
     %figure ('name', 'Bar Graph')
     hFig = figure('name', 'Bar Graph', 'NumberTitle', 'off');   

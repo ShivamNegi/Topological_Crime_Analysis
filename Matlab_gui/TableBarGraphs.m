@@ -22,7 +22,7 @@ function varargout = TableBarGraphs(varargin)
 
 % Edit the above text to modify the response to help TableBarGraphs
 
-% Last Modified by GUIDE v2.5 19-Apr-2016 21:45:56
+% Last Modified by GUIDE v2.5 21-Apr-2016 17:25:18
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -86,6 +86,7 @@ run('CrimeBarGraphs.m');
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
+system('python readpopulationxls.py');
 clf('reset');
 close;
 run('PopulationBarGraphs.m');
@@ -96,6 +97,7 @@ run('PopulationBarGraphs.m');
 
 % --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(hObject, eventdata, handles)
+system('python readliteracyxls.py');
 clf('reset');
 close;
 run('LiteracyBarGraphs.m');
@@ -106,6 +108,7 @@ run('LiteracyBarGraphs.m');
 
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
+system('python readpolicexls.py');
 clf('reset');
 close;
 run('PoliceBarGraphs.m');
@@ -113,13 +116,13 @@ run('PoliceBarGraphs.m');
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% --- Executes during object creation, after setting all properties.
-function axes3_CreateFcn(hObject, eventdata, handles)
-I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
 
+% --- Executes during object creation, after setting all properties.
+function axes4_CreateFcn(hObject, eventdata, handles)
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
 hi = imagesc(I)
-% hObject    handle to axes3 (see GCBO)
+% hObject    handle to axes4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: place code in OpeningFcn to populate axes3
+% Hint: place code in OpeningFcn to populate axes4

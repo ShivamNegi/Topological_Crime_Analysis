@@ -1,35 +1,35 @@
-function varargout = PoliceBarGraphs(varargin)
-% POLICEBARGRAPHS MATLAB code for PoliceBarGraphs.fig
-%      POLICEBARGRAPHS, by itself, creates a new POLICEBARGRAPHS or raises the existing
+function varargout = Signup(varargin)
+% SIGNUP MATLAB code for Signup.fig
+%      SIGNUP, by itself, creates a new SIGNUP or raises the existing
 %      singleton*.
 %
-%      H = POLICEBARGRAPHS returns the handle to a new POLICEBARGRAPHS or the handle to
+%      H = SIGNUP returns the handle to a new SIGNUP or the handle to
 %      the existing singleton*.
 %
-%      POLICEBARGRAPHS('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in POLICEBARGRAPHS.M with the given input arguments.
+%      SIGNUP('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in SIGNUP.M with the given input arguments.
 %
-%      POLICEBARGRAPHS('Property','Value',...) creates a new POLICEBARGRAPHS or raises the
+%      SIGNUP('Property','Value',...) creates a new SIGNUP or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before PoliceBarGraphs_OpeningFcn gets called.  An
+%      applied to the GUI before Signup_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to PoliceBarGraphs_OpeningFcn via varargin.
+%      stop.  All inputs are passed to Signup_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help PoliceBarGraphs
+% Edit the above text to modify the response to help Signup
 
-% Last Modified by GUIDE v2.5 21-Apr-2016 17:26:08
+% Last Modified by GUIDE v2.5 21-Apr-2016 15:11:55
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @PoliceBarGraphs_OpeningFcn, ...
-                   'gui_OutputFcn',  @PoliceBarGraphs_OutputFcn, ...
+                   'gui_OpeningFcn', @Signup_OpeningFcn, ...
+                   'gui_OutputFcn',  @Signup_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,26 +44,26 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before PoliceBarGraphs is made visible.
-function PoliceBarGraphs_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before Signup is made visible.
+function Signup_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to PoliceBarGraphs (see VARARGIN)
+% varargin   command line arguments to Signup (see VARARGIN)
 
-% Choose default command line output for PoliceBarGraphs
+% Choose default command line output for Signup
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes PoliceBarGraphs wait for user response (see UIRESUME)
+% UIWAIT makes Signup wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = PoliceBarGraphs_OutputFcn(hObject, eventdata, handles) 
+function varargout = Signup_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -71,6 +71,36 @@ function varargout = PoliceBarGraphs_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+
+
+% --- Executes on button press in pushbutton1.
+function pushbutton1_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+
+function edit1_Callback(hObject, eventdata, handles)
+% hObject    handle to edit1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit1 as text
+%        str2double(get(hObject,'String')) returns contents of edit1 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
 
 
 % --- Executes on selection change in listbox1.
@@ -96,20 +126,13 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-state = get(handles.listbox2, 'value');
-policeplots(state);
-% hObject    handle to pushbutton1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
-clf('reset');
-close;
-openfig('Mainmenu.fig');
+name = get(handles.edit1, 'string');
+state = get(handles.listbox2, 'value');
+name = py.list(name);
+state = py.float(state);
+py.inserting_usertable.inp(name, state);
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -138,10 +161,20 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+clf('reset');
+close;
+run('Login.m');
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
 % --- Executes during object creation, after setting all properties.
 function axes1_CreateFcn(hObject, eventdata, handles)
 I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
-hi = imagesc(I)
+hi = imagesc(I);
 % hObject    handle to axes1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
