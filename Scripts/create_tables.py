@@ -36,7 +36,7 @@ def createusertable(c):
 			create table usertable(
 			u_id varchar2(20) primary key,
 			name varchar2(20),
-			job_desc varchar2(100)
+			statefrom integer
 			)
 			'''
 	c.execute(query)
@@ -99,7 +99,7 @@ def createliteracy(c):
 			create table literacy(
 			state varchar2(30) ,
 			year number(4) ,
-			percent numeric(5, 2),
+			percentage numeric(5, 2),
 			primary key(state, year)
 			)
 			'''

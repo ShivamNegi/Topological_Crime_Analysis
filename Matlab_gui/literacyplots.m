@@ -5,7 +5,6 @@ function[] = literacyplots(state)
     
     years = {'2001','2011'}; 
     data = xlsread('/home/negi/Documents/Topological_Crime_Analysis/Literacy/testing.xls');
-    disp(data);
     
     states = {' Andhra Pradesh',' Arunachal Pradesh',...
     ' Assam',...
@@ -43,7 +42,7 @@ function[] = literacyplots(state)
     ' Puducherry'};
     states = sort(states);
 
-    crime = data(state, 8:9);
+    crime = data(state, 1:2);
     
     %figure ('name', 'Bar Graph')
     hFig = figure('name', 'Bar Graph', 'NumberTitle', 'off');   
