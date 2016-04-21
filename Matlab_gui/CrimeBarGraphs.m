@@ -22,7 +22,7 @@ function varargout = CrimeBarGraphs(varargin)
 
 % Edit the above text to modify the response to help CrimeBarGraphs
 
-% Last Modified by GUIDE v2.5 21-Apr-2016 15:13:43
+% Last Modified by GUIDE v2.5 22-Apr-2016 00:38:59
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -141,20 +141,11 @@ openfig('Mainmenu.fig');
 
 
 % --- Executes during object creation, after setting all properties.
-function axes5_CreateFcn(hObject, eventdata, handles)
-I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
-hi = imagesc(I)
-% hObject    handle to axes5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-
-% --- Executes during object creation, after setting all properties.
-function axes6_CreateFcn(hObject, eventdata, handles)
+function axes7_CreateFcn(hObject, eventdata, handles)
 I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
 hi = imagesc(I);
-% hObject    handle to axes6 (see GCBO)
+% hObject    handle to axes7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
-% Hint: place code in OpeningFcn to populate axes6
+% Hint: place code in OpeningFcn to populate axes7

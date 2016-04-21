@@ -91,7 +91,7 @@ if val == 1
      close;
      run('Mainmenu.m');
 else
-    
+    disp('Invalid Username');
 end
 % hObject    handle to edit1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
