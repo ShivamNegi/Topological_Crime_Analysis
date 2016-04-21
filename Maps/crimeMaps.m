@@ -1,3 +1,4 @@
+function[] = crimeMaps()
 clc;
 clear;
 states = shaperead('india','UseGeoCoords',true);
@@ -46,3 +47,4 @@ symbols = makesymbolspec('Polygon', ...
     {'NAME_1','Puducherry','FaceColor',[r(35),g(35),b(35)]});
 geoshow(states,'SymbolSpec',symbols, ...
     'DefaultFaceColor','blue','DefaultEdgeColor','black');
+end

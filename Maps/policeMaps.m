@@ -1,7 +1,9 @@
+function[] = policeMaps(year)
 figure('name','Police','NumberTitle','off');
+states = shaperead('india','UseGeoCoords',true);
 worldmap('india');
 geoshow(states);
-data = policedata(2001);
+data = policedata(year);
 [r, g, b] = getcolor(data);
 symbols = makesymbolspec('Polygon', ...
     {'NAME_1','Andaman and Nicobar','FaceColor',[r(1),g(1),b(1)]}, ...
@@ -42,3 +44,4 @@ symbols = makesymbolspec('Polygon', ...
     {'NAME_1','West Bengal','FaceColor',[r(35),g(35),b(35)]});
 geoshow(states,'SymbolSpec',symbols, ...
     'DefaultFaceColor','blue','DefaultEdgeColor','black');
+end
