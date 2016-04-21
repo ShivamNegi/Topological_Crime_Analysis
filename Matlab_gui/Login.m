@@ -22,7 +22,7 @@ function varargout = Login(varargin)
 
 % Edit the above text to modify the response to help Login
 
-% Last Modified by GUIDE v2.5 21-Apr-2016 15:16:34
+% Last Modified by GUIDE v2.5 21-Apr-2016 18:21:29
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -205,3 +205,10 @@ function figure1_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to figure1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes when figure1 is resized.
+function figure1_SizeChangedFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
