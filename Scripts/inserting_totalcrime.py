@@ -23,10 +23,10 @@ def fetchingdata(path, c):
 	for row in ra:
 		state = row[0].encode('utf-8')
 		type_crime = row[1].encode('utf-8')
-		year_arr = range(2001, 2013)
+		year_arr = range(2001, 2014)
 		counter = 0
 
-		for i in range(2, 14):
+		for i in range(2, 15):
 			query = 'INSERT INTO TOTALCRIME VALUES(\'' + state + '\',\'' + type_crime + '\',' + `year_arr[counter]` + ',' + `row[i]` + ')'
 			counter = counter + 1
 			c.execute(query)

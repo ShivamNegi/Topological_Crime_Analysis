@@ -8,7 +8,7 @@ import inserting_police11
 import inserting_crimepart1
 import inserting_crimepart2
 import inserting_totalcrime
-import inserting_totalcrime13
+# import inserting_totalcrime13
 
 
 drop_tables.main()
@@ -21,7 +21,7 @@ inserting_police11.main()
 inserting_crimepart1.main()
 inserting_crimepart2.main()
 inserting_totalcrime.main()
-inserting_totalcrime13.main()
+# inserting_totalcrime13.main()
 
 print '*' * 60
 print '\t\tDATABASE CONFIGURED.'

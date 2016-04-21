@@ -5,6 +5,9 @@ def main():
 	conn = cx.connect(string)
 	c = conn.cursor()
 
+	createusertable(c)
+	conn.commit()
+
 	createliteracy(c)
 	conn.commit()
 
@@ -26,6 +29,19 @@ def main():
 	print '-' * 60
 	print '\t\tALL TABLES CREATED.'
 	print '-' * 60
+
+
+def createusertable(c):
+	query = '''
+			create table usertable(
+			u_id varchar2(20) primary key,
+			name varchar2(20),
+			job_desc varchar2(100)
+			)
+			'''
+	c.execute(query)
+	print 'User table created.'
+
 
 
 def createcrime(c):

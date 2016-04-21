@@ -2,7 +2,7 @@ import cx_Oracle as cx
 
 
 def main():
-	tablenames = ['Crime', 'Population', 'Police', 'Literacy', 'Mishap', 'Grouping']
+	tablenames = ['Crime', 'Population', 'Police', 'Literacy', 'Mishap', 'Grouping', 'usertable', 'totalcrime']
 	# string = raw_input('user_id/password@XE: ')
 	string = 'system/breakwindows@XE'
 
@@ -24,7 +24,6 @@ def droptables(c, tablenames):
 			print name, 'table deleted.'
 		except:
 			print name, 'table does not exist.'
-	c.execute('drop table totalcrime')
 
 if __name__ == '__main__':
 	main()
