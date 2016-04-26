@@ -22,7 +22,7 @@ function varargout = TableBarGraphs(varargin)
 
 % Edit the above text to modify the response to help TableBarGraphs
 
-% Last Modified by GUIDE v2.5 21-Apr-2016 17:25:18
+% Last Modified by GUIDE v2.5 25-Apr-2016 17:07:09
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -126,3 +126,15 @@ hi = imagesc(I)
 % handles    empty - handles not created until after all CreateFcns called
 
 % Hint: place code in OpeningFcn to populate axes4
+
+
+% --- Executes during object creation, after setting all properties.
+function axes5_CreateFcn(hObject, eventdata, handles)
+I=imread('/home/negi/Documents/Topological_Crime_Analysis/Matlab_gui/crumpled_map_of_india.jpg');
+hi = imagesc(I)
+
+% hObject    handle to axes5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: place code in OpeningFcn to populate axes5

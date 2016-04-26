@@ -22,7 +22,7 @@ function varargout = CrimeCountMaps(varargin)
 
 % Edit the above text to modify the response to help CrimeCountMaps
 
-% Last Modified by GUIDE v2.5 22-Apr-2016 00:20:03
+% Last Modified by GUIDE v2.5 25-Apr-2016 11:14:58
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -160,3 +160,10 @@ function popupmenu2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes during object creation, after setting all properties.
+function figure1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called

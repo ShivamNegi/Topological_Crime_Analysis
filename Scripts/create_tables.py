@@ -104,7 +104,28 @@ def createliteracy(c):
 			)
 			'''
 	c.execute(query)
-	print 'literacy table created.'
+	print 'Literacy table created.'
+
+
+def createliteracytrigger(c):
+	query = '''
+			create or replace trigger nonzeropercent
+			before insert or update on literacy
+			for each row
+			begin
+			case
+				when updating then
+					if(:new.percentage > 100) then
+						raise_application_error(-2,'Percentage Cannot be set Zero.');
+					end if;
+			end case;
+			end;	
+			/		
+
+			'''
+ 	c.execute(query)			
+	print 'Literacy update trigger Created.'
+
 
 
 def creategrouping(c):
